@@ -13,7 +13,7 @@ if (!isRunningRspack && !isRunningWebpack) {
  * @type {import('webpack').Configuration | import('@rspack/cli').Configuration}
  */
 const config = {
-  mode: "development",
+  mode: "production",
   devtool: false,
   entry: {
     main: "./src/index",
@@ -28,6 +28,9 @@ const config = {
   },
   experiments: {
     css: true,
+    rspackFuture: {
+      newTreeshaking: true,
+    },
   },
 };
 
